@@ -23,7 +23,20 @@ Tested with:
 ```
 sudo su
 cd
-curl -sSL https://raw.githubusercontent.com/abajwa-hw/masterclass/master/ranger-atlas/setup.sh | sudo -E bash  
+export stack=cl1
+export ambari_pass=admin
+export ambari_stack_version=2.6
+export host_count=5
+export enable_kerberos=false
+export ambari_version="2.6.1.5-3" 
+export zeppelin_host=test-cluster-7.novalocal
+export atlas_host=test-cluster-9.novalocal
+export ranger_host=test-cluster-10.novalocal
+export hive_host=test-cluster-6.novalocal
+export hcat_host=test-cluster-6.novalocal
+export kafka_broker=test-cluster-7.novalocal
+export zookeeper_host=test-cluster-6.novalocal
+curl -sSL https://raw.githubusercontent.com/asirna/masterclass/master/ranger-atlas/setup.sh | sudo -E bash  
 ```
 
 - This will run for about 30min. Once complete, proceed to part 2 below and complete the manual steps to enable Hive LLAP
@@ -43,7 +56,7 @@ curl -sSL https://raw.githubusercontent.com/abajwa-hw/masterclass/master/ranger-
 - Connect via SSH to sandbox as root, set your Ambari admin password and run setup_sandbox.sh (note this requires VM has access to internet):
 ```
 export ambari_pass=BadPass#1
-curl -sSL https://raw.githubusercontent.com/abajwa-hw/masterclass/master/ranger-atlas/setup_sandbox.sh | sudo -E sh
+curl -sSL https://raw.githubusercontent.com/asirna/masterclass/master/ranger-atlas/setup_sandbox.sh | sudo -E sh
 ```
 
 
